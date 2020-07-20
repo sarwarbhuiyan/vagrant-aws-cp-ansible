@@ -1,0 +1,4 @@
+---
+- hosts: kafka_connect
+  roles:
+    - role: ansible-role-openldap-test-server
