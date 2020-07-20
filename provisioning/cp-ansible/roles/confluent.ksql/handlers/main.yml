@@ -1,3 +1,0 @@
----
-- name: restart ksql
-  include_tasks: tasks/restart_ksql.yml
