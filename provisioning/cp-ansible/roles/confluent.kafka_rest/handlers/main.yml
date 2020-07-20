@@ -1,3 +1,0 @@
----
-- name: restart kafka-rest
-  include_tasks: tasks/restart_kafka_rest.yml
