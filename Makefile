@@ -27,10 +27,10 @@ ldap-playbook:
 	touch ldap-playbook
 
 download-cp-ansible:
-	git subtree add --prefix provisioning/cp-ansible https://github.com/confluentinc/cp-ansible master --squash
+	git subtree add --prefix provisioning/cp-ansible https://github.com/confluentinc/cp-ansible master
 
 update-cp-ansible:
-	git subtree pull --prefix provisioning/cp-ansible https://github.com/confluentinc/cp-ansible master --squash
+	git subtree pull --prefix provisioning/cp-ansible https://github.com/confluentinc/cp-ansible master
 
 run-all-playbook: ldap-playbook
 	ansible-playbook -i provisioning/hosts.yml provisioning/cp-ansible/all.yml -v
