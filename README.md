@@ -78,7 +78,27 @@ $ make run-all-playbook
 
 Open a browser to https://c3.confluent.local (or whatever other suffix you used when you updated Vagrantfile and provisioning/hosts.yml)
 
+## Suspend all VMs for the day
 
+```bash
+$ make stop-vms
+```
+
+## Teardown all VMs
+
+```bash
+$ make teardown-vms
+```
+
+
+## Teardown individual vm and update hosts
+
+Sometimes you might need to teardown an individual VM only and update the hosts files
+
+```bash
+$ vagrant destroy <name of vm> # (e.g. c3.confluent.local)
+$ vagrant hostmanager
+```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
