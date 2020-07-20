@@ -10,6 +10,8 @@ file is provided for modification.
 that we can avoid dealing with changing host names to be the AWS host names.
 3. An openldap playbook to setup an Openldap server and add some basic users
 4. Suspend/teardown commands to save on money when you're done for the day or done forever with those VMs
+5. Clones cp-ansible into provisioning/cp-ansible and the user can choose whatever tag they want
+
 
 ## Pre-requisites
 

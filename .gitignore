@@ -1,4 +1,5 @@
 .vagrant
+download-cp-ansible
 install*
 ldap*
 provisioning/cp-ansible
