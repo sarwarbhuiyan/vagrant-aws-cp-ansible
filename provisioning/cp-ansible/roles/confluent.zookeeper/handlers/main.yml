@@ -1,3 +1,0 @@
----
-- name: restart zookeeper
-  include_tasks: tasks/restart_zookeeper.yml
