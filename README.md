@@ -18,6 +18,7 @@ that we can avoid dealing with changing host names to be the AWS host names.
 1. [ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 2. [make](https://www.gnu.org/software/make/) - (comes already built-in on Mac OSX though)
 3. AWS Account with credentials stored in ~/.aws/credentials
+4. Create an ssh key for your VMs from the AWS Console and download locally to ~/.ssh/
 
 ## Configuration
 
@@ -28,12 +29,21 @@ that we can avoid dealing with changing host names to be the AWS host names.
     aws.ami = 'ami-09e5afc68eed60ef4'
 ```
 
-2. In Vagrantfile, replace "sarwar" with something else to make sure my VMs don't clash with yours if you're using AWS eu-west-1 on the Confluent SE account.
+2. In Vagrantfile, replace "sarwar" with something else to make sure my VM names and tags  don't clash with yours if you're using AWS eu-west-1 on the Confluent SE account.
 
-3. You should consider a different DNS suffix to ".confluent.local". If you do, search/replace ".confluent.local" in Vagrantfile and provisioning/hosts.yml
-to the suffix of your choosing.
+3. Update provisioning/hosts.yml with your own ssh key for AWS.
 
-4. The Make file includes tasks to install vagrant, vagrant-aws, and vagrant-hostmanager which perform a number of functions. If you've already got those,
+```yaml
+ansible_ssh_private_key_file: ~/.ssh/sarwar-confluent-dev.pem
+```
+
+4. You should consider a different DNS suffix to ".confluent.local". If you do, search/replace ".confluent.local" in Vagrantfile and provisioning/hosts.yml
+to the suffix of your choosing. Otherwise, you may end up clashing with mine and it might not be pretty. 
+
+
+OPTIONAL:
+
+The Make file includes tasks to install vagrant, vagrant-aws, and vagrant-hostmanager which perform a number of functions. If you've already got those,
 you can make your startup faster by doing the following to skip installing them.
 
 ```bash
