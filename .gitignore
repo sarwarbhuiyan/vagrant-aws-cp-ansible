@@ -1,3 +1,4 @@
 .vagrant
 install*
 ldap*
+provisioning/cp-ansible
