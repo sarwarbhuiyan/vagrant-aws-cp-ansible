@@ -56,6 +56,8 @@ $ make ldap-playbook
 
 ## Setup confluent platform
 
+cp-ansible is already available in provisioning using git subtree. If you want update that tree
+
 ```bash
 $ make run-all-playbook
 ```
