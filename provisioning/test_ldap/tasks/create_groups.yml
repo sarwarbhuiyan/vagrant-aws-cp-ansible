@@ -1,0 +1,8 @@
+---
+- name: "Create Group: {{ldap_group}} Config file"
+  template:
+    src: group.ldif.j2
+    dest: "/tmp/{{ldap_group}}.ldif"
+
+- name: "Create Group: {{ldap_group}}"
+  shell: "ldapadd -x -D 'cn=ldapadm,dc={{ldap_dc}},dc={{ldap_dc_extension}}' -f /tmp/{{ldap_group}}.ldif -w {{ldap_admin_password}}"

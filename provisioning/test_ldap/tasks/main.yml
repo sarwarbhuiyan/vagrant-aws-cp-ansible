@@ -91,6 +91,13 @@
     ldap_user_password: "{{item.password}}"
   loop: "{{ ldap_users }}"
 
+- name: Create LDAP Groups
+  include_tasks: create_groups.yml
+  vars:
+    ldap_group: "{{item.groupname}}"
+    ldap_members: "{{item.members}}"
+  loop: "{{ldap_groups}}"
+
 - name: Enable logging in rsyslog
   lineinfile:
     path: /etc/rsyslog.conf

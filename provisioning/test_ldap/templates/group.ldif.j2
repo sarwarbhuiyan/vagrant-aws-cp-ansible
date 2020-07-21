@@ -1,0 +1,7 @@
+dn: cn={{ldap_group}},ou={{ldap_rbac_group}},dc={{ldap_dc}},dc={{ldap_dc_extension}}
+objectClass: top
+objectClass: groupOfNames
+cn: {{ldap_group}}
+{% for member in  ldap_members  %}
+member: uid={{member.username}},ou={{ldap_rbac_group}},dc={{ldap_dc}},dc={{ldap_dc_extension}}
+{% endfor %}
